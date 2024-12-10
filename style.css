@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-Tomato: hsl(4, 100%, 67%);
+  --clr-Dark-Slate-Grey: hsl(234, 29%, 20%);
+  --clr-Charcoal-Grey: hsl(235, 18%, 26%);
+  --clr-Grey: hsl(231, 7%, 60%);
+  --clr-White: hsl(0, 0%, 100%);
+  --ff1-font-family: "Roboto", sans-serif;
+}
+
+body {
+  font-family: var(--ff1-font-family);
+  background: var(--clr-Charcoal-Grey);
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.successState {
+  display: none;
+  background: white;
+  margin: 0 auto;
+  width: 500px;
+  height: 510px;
+  border-radius: 2rem;
+}
+
+.successState img {
+  width: 3.5rem;
+  margin-top: 2.5rem;
+  margin-left: 3.5rem;
+}
+
+.successState h1 {
+  margin-left: 3.5rem;
+  margin-top: 2rem;
+}
+
+.successState p {
+  margin-left: 3.5rem;
+  margin-bottom: 2.5rem;
+  margin-right: 4rem;
+  line-height: 1.6rem;
+}
+span {
+  font-weight: 800;
+}
+
+.successState button {
+  margin-left: 3rem;
+  width: 390px;
+}
+
+.wrapper {
+  background: white;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0 auto;
+  width: 850px;
+  height: 550px;
+  border-radius: 1.8rem;
+}
+
+.oneImage img {
+  width: 350px;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
+.container {
+  margin-top: 5rem;
+  margin-right: 6rem;
+}
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+.description p {
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.updatesDescription {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 0.7rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.updatesDescription img {
+  width: 1.1rem;
+}
+.updates {
+  margin-bottom: 1.5rem;
+}
+
+h4 {
+  font-size: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  width: 330px;
+  height: 48px;
+  border-radius: 0.4rem;
+  border: 1.5px solid lightgrey;
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+input:hover {
+  border: 1.5px solid black;
+}
+input:focus {
+  border: 1.5px solid black;
+  outline: none;
+}
+
+button {
+  width: 330px;
+  height: 50px;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--clr-Dark-Slate-Grey);
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background: linear-gradient(to right, hsl(350, 98%, 66%), hsl(4, 100%, 67%));
+}
+
+.email-error {
+  color: red;
+  font-size: 0.6rem;
+  font-weight: 600;
+  display: none;
+}
+.error-state {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 440px) {
+  body {
+    display: block;
+    background: white;
+    width: 97vh;
+    height: 100vh;
+  }
+  .wrapper {
+    display: block;
+  }
+  .oneImage img {
+    width: 45%;
+    height: 70%;
+  }
+
+  .wrapper h1 {
+    margin-left: 2rem;
+  }
+  .description {
+    margin-left: 2rem;
+  }
+
+  .updatesDescription {
+    margin-left: 2rem;
+  }
+
+  .email-address-input {
+    margin-left: 2rem;
+  }
+
+  .wrapper button {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .successState {
+    margin-right: 30rem;
+  }
+  .successState p {
+    margin-right: 7rem;
+  }
+
+  .successState button {
+    margin-top: 24rem;
+    width: 320px;
+  }
+}

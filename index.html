@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>My Solution | Newsletter sign-up form with success message</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="oneImage">
+        <img
+          src="./assets/images/illustration-sign-up-desktop.svg"
+          alt="illustration desktop"
+        />
+      </div>
+      <div class="container">
+        <div class="mainHeading">
+          <h1>Stay updated!</h1>
+        </div>
+        <div class="description">
+          <p>
+            Join 60,000+ product managers receiving monthly <br />
+            updates on:
+          </p>
+        </div>
+
+        <div class="updates">
+          <div class="updatesDescription">
+            <img src="./assets/images/icon-list.svg" alt="icon list" />
+            <p>Product discovery and building what matters</p>
+          </div>
+
+          <div class="updatesDescription">
+            <img src="./assets/images/icon-list.svg" alt="icon list" />
+            <p>Measuring to ensure updates are a success</p>
+          </div>
+
+          <div class="updatesDescription">
+            <img src="./assets/images/icon-list.svg" alt="icon list" />
+            <p>And much more!</p>
+          </div>
+        </div>
+        <div class="email-address-input">
+          <div class="error-state">
+            <h4>Email address</h4>
+            <h4 class="email-error">Valid email required</h4>
+          </div>
+
+          <input
+            type="email"
+            class="error-input"
+            placeholder="email@company.com"
+          />
+        </div>
+
+        <div class="subscribeButton">
+          <button>Subscribe to monthly newsletter</button>
+        </div>
+      </div>
+    </div>
+    <div class="successState">
+      <img src="./assets/images/icon-success.svg" alt="icon list" />
+
+      <div class="thanks-heading">
+        <h1>Thanks for subscribing!</h1>
+      </div>
+
+      <div class="success-description">
+        <p>
+          A confirmation email has been sent to
+          <span> ash@loremcompany.com. </span> Please open it and click the
+          button inside to confirm your subscription.
+        </p>
+      </div>
+
+      <div class="Dismiss-button">
+        <button>Dismiss message</button>
+      </div>
+    </div>
+
+    <script>
+      document
+        .querySelector("button")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+
+          // Pobierz element HTML inputa (a nie jego wartość)
+          let emailInputElement = document.querySelector(".error-input");
+
+          // Pobierz wartość z inputa
+          let emailInputValue = emailInputElement.value;
+
+          // Regex walidujący email
+          let emailValid =
+            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
+              emailInputValue
+            );
+
+          // Znajdź element błędu
+          let emailError = document.querySelector(".email-error");
+
+          // Znajdź stan sukcesu
+          let successState = document.querySelector(".successState");
+
+          // Sprawdź, czy email jest poprawny
+          if (!emailValid) {
+            emailError.style.display = "block";
+
+            // Zmień style inputa
+            emailInputElement.style.border = "1.5px solid red";
+            emailInputElement.style.background = "rgba(255,232,230,255)";
+            emailInputElement.style.color = "red";
+          } else {
+            emailError.style.display = "none";
+
+            document.querySelector(".wrapper").style.display = "none";
+            successState.style.display = "block";
+          }
+        });
+    </script>
+  </body>
+</html>
